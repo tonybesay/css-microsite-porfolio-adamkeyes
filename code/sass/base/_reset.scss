@@ -1,0 +1,13 @@
+@use '../abstracts/mixins' as mix;
+
+* {
+  @include mix.reset;
+}
+
+ul{
+  @include mix.reset-list;
+}
+
+a {
+  text-decoration: none;
+}

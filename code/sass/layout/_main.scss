@@ -1,0 +1,470 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+.home_main {
+    position: relative;
+    z-index: 0;
+    &__hero {
+        text-align: center;
+        position: relative;
+        border-bottom: 1px solid var.$color-white;
+        padding-bottom: 80px; 
+        @include mix.breakpoint(tablet) {
+            display: flex;
+            justify-content: space-between;
+            text-align: start;
+            padding-bottom: 60px;
+        }
+        @include mix.breakpoint(desktop) {
+            text-align: start;
+            padding-bottom: 90px;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            width: 530px;
+            height: 140px;
+            left: -360px;
+            top: -100px;
+            background-image: url('../../img/vector-rings.svg');
+            background-repeat: no-repeat;
+        }
+        &__img{
+            margin-top: 49px;
+            position: relative;
+            display: inline-block;
+            @include mix.breakpoint(tablet) {
+                position: absolute;
+                top: -10px;
+                right: -50px;
+                width: 320px;
+            }
+            @include mix.breakpoint(desktop) {
+                position: absolute;
+                top: -100px;
+                right: 0;
+                width: 445;
+                height: 620px;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                width: 174px;
+                height: 383px;
+                bottom: 0;
+                left: 0;
+                background-image: linear-gradient(to bottom, rgba(var.$color-grey-dark, 0%), rgba(var.$color-grey-dark, 100%));
+                @include mix.breakpoint(tablet) {
+                    background-color: var.$color-grey-dark;
+                    height: 600px;
+                    width: 322px;
+                    z-index: -10;
+                }
+                @include mix.breakpoint(desktop) {
+                    background-color: var.$color-grey-dark;
+                    height: 900px;
+                    width: 100%;
+                    z-index: -10;
+                }
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                right: -200px;
+                top: 40%;
+                background-image: url('../../img/icon-oval.svg');
+                background-repeat: no-repeat;
+                @include mix.breakpoint(tablet) {
+                    right: -250px;
+                    top: 320px;
+                }
+                @include mix.breakpoint(desktop) {
+                    left: -65px;
+                    top: 420px;
+                }
+            }
+            img {
+                position: relative;
+                object-fit: contain;
+                width: 174px;
+                @include mix.breakpoint(tablet) {
+                    width: 340px;
+                    height: 486;
+                    object-fit: cover;
+                    position: relative;
+                    bottom: -8px;
+                }
+                @include mix.breakpoint(desktop) {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    position: relative;
+                    bottom: -8px;
+                }
+            }
+        }
+        &__content{
+            margin-top: 40px;
+            @include mix.breakpoint(tablet) {
+                margin-top: 65px;
+            }
+            @include mix.breakpoint(desktop) {
+                margin-top: 127px;
+            }
+            &__title {
+                font-size: 40px;
+                line-height: 40px;
+                position: relative;
+                @include mix.breakpoint(tablet) {
+                    font-size: 72px;
+                    line-height: 72px;
+                    letter-spacing: -2.05px;
+                    width: 75%;
+                    .new_line {
+                        display: block;
+                    }
+                }
+                @include mix.breakpoint(desktop) {
+                    font-size: 88px;
+                    line-height: 88px;
+                    letter-spacing: -2.05px;
+                    width: 75%;
+                }
+                .underline {
+                    position: relative;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 4px;
+                        left: 0;
+                        bottom: 2px;
+                        background-color: var.$color-green;
+                    }
+                }
+            }
+            &__subtitle {
+                margin-top: 20px;
+                margin-bottom: 24px;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 26px;
+                color: var.$color-grey-light;
+                @include mix.breakpoint(tablet) {
+                    margin-top: 60px;
+                    width: 65%;
+                    font-size: 18px;
+                    line-height: 28px;
+                    font-weight: 400;
+                    margin-bottom: 34px
+                }
+                @include mix.breakpoint(desktop) {
+                    margin-top: 60px;
+                    width: 40%;
+                    font-size: 18px;
+                    line-height: 28px;
+                    font-weight: 400;
+                    margin-bottom: 66px
+                }
+            }
+            &__btn {
+                font-size: 16px;
+                display: inline-block;
+                position: relative;
+                @include mix.breakpoint(desktop) {
+                    margin-bottom: 150px;
+                }
+            }
+        }
+    }
+    &__skills {
+        text-align: center;
+        margin-top: 16px;
+        border-bottom: 1px solid var.$color-grey-light;
+        padding-bottom: 40px;
+        position: relative;
+        @include mix.breakpoint(tablet) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            text-align: start;
+            border: 0;
+        }
+        @include mix.breakpoint(desktop) {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            text-align: start;
+            border: 0;
+            row-gap: 58px;
+            margin-top: 40px;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            width: 530px;
+            height: 100%;
+            right: -360px;
+            top: 75%;
+            background-image: url('../../img/vector-rings.svg');
+            background-repeat: no-repeat;
+            @include mix.breakpoint(desktop) {
+                top: 65%;
+            }
+        }
+        &__skill_container {
+
+            margin-top: 24px;
+            @include mix.breakpoint(tablet) {
+                margin-top: 52px;
+            }
+            &__title {
+                font-size: 32px;
+                @include mix.breakpoint(tablet) {
+                    font-size: 48px;
+                    line-height: 56px;
+                    margin-bottom: 13px;
+                }
+                @include mix.breakpoint(desktop) {
+                    margin-bottom: 14px;
+                }
+            }
+            &__subtitle {
+                font-size: 16px;
+                font-weight: 300;
+                margin-top: 1px;
+                color: var.$color-grey-light;
+            }
+        }
+    }
+    &__projects {
+        margin-top: 80px;
+        margin-bottom: 60px;
+        width: 400px;
+        margin: 80px auto 80px auto;
+        @include mix.breakpoint(tablet) {
+            width: 100%;
+        }
+        @include mix.breakpoint(desktop) {
+            width: 100%;
+        }
+        &__title_btn_container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &__title {
+                font-size: 40px;
+                @include mix.breakpoint(tablet) {
+                    font-size: 72px;
+                    line-height: 72px;
+                    letter-spacing: -2.05px;
+                }
+                @include mix.breakpoint(desktop) {
+                    font-size: 88px;
+                    line-height: 88px;
+                    letter-spacing: -2.5px;
+                }
+            }
+            &__btn {
+                font-size: 16px;
+            }
+        }
+        .projects-content{
+            @include mix.breakpoint(tablet) {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            @include mix.breakpoint(desktop) {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap
+            }
+        }
+        &__container {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+            @include mix.breakpoint(tablet) {
+                width: 48%;
+                margin-top: 60px;
+            }
+            @include mix.breakpoint(desktop) {
+                width: 48%;
+                margin-top: 80px;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                    height: 83.5%;
+                }
+                &:hover::after {
+                    opacity: 1;
+                }
+                &:hover  .home_main__projects__container__buttons { 
+                    opacity: 1;
+                    pointer-events: auto;
+                }
+            }          
+            &__img{
+                display: block;
+                width: 343px;
+                @include mix.breakpoint(desktop) {
+                    width: 100%;
+                }
+                @include mix.breakpoint(desktop) {
+                    width: 100%;
+                }
+            }
+            &__title {
+                margin-top: 20px;
+                font-size: 24px;
+            }
+            &__programing_languages {
+                margin-top: 7px;
+                display: flex;
+                gap: 20px;
+            }
+            &__buttons {
+                margin-top: 20px;
+                display: flex;
+                gap: 20px;
+                @include mix.breakpoint(tablet) {
+                    font-size: 16px;
+                }
+                @include mix.breakpoint(desktop) {
+                    position: absolute;
+                    top: 35%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: opacity 0.3s ease;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 40px;
+                    align-items: center;
+                    z-index: 1;
+                }
+                &:hover ~ .home_main__projects__container__img_wrapper::after{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &__contact {
+        padding-top: 40px;
+        padding-bottom: 90px;
+        text-align: center;
+        position: relative;
+        @include mix.breakpoint(tablet) {
+            border-bottom: 1px solid var.$color-white;  
+            .content-container {
+                width: 66%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        @include mix.breakpoint(desktop) {
+            border-bottom: 1px solid var.$color-white;
+            .content-container {
+                display: flex;
+                justify-content: space-between;
+                gap: 20%;
+                text-align: start;
+                margin-top: 80px;
+            }
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            width: 530px;
+            height: 150px;
+            left: -360px;
+            top: 75%;
+            background-image: url('../../img/vector-rings.svg');
+            background-repeat: no-repeat;
+            @include mix.breakpoint(tablet) {
+                top: 78%;
+                left: -400px;
+            }
+            @include mix.breakpoint(desktop) {
+                top: 70%;
+            }
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 110%;
+            left: -50%;
+            top: 0;
+            background-color: var.$color-grey-dark;
+            z-index: -10;
+        }
+        &__title {
+            font-size: 40px;
+            line-height: 40px;
+            position: relative;
+            z-index: -10;
+            @include mix.breakpoint(tablet) {
+                margin-top: 60px;
+                font-size: 72px;
+                line-height: 72px;
+            }
+            @include mix.breakpoint(desktop) {
+                font-size: 88px;
+                line-height: 88px;
+            }
+        }
+        &__subtitle {
+            margin-top: 20px;
+            margin-bottom: 50px;
+            @include mix.breakpoint(tablet) {
+                font-weight: 300;
+                line-height: 28px;
+                letter-spacing: 0.5px;
+            }
+            @include mix.breakpoint(desktop) {
+                font-weight: 300;
+                letter-spacing: 0.5px;
+                line-height: 28px;
+                margin-top: 36px;
+            }
+        }
+        &__form {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-bottom: 20px;
+            @include mix.breakpoint(desktop) {
+                width: 100%;
+            }
+            &__text_area {
+                padding: 0 0 81px 24px;
+            }
+            &__btn {
+                align-self: end;
+                width: 144px;
+                text-transform: uppercase;
+                padding-bottom: 11px;
+                position: relative;
+                letter-spacing: 2.29px;
+                font-weight: 500;
+                font-size: var.$primary-font;
+                background-color: var.$color-grey-dark;
+                font-size: 16px;
+                border: 0;
+                border-bottom: 2px solid var.$color-green;
+                cursor: pointer;
+            }
+        }
+    }
+}
+

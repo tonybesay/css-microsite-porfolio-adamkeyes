@@ -1,0 +1,53 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+.footer {
+    padding-top: 40px;
+    padding-bottom: 60px  ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    @include mix.breakpoint(tablet) {
+        flex-direction: row;
+        justify-content: space-between;
+    } 
+    @include mix.breakpoint(desktop) {
+        flex-direction: row;
+        justify-content: space-between;
+
+    } 
+    &::before {
+        content: '';
+        position: absolute;
+        width: 200%;
+        height: 110%;
+        left: -50%;
+        top: 0%;
+        background-color: var.$color-grey-dark;
+        z-index: -200;
+    }
+    &__logo {
+        width: 130px;
+        @include mix.breakpoint(tablet) {
+            width: 172px;
+        } 
+        @include mix.breakpoint(desktop) {
+            width: 172px;
+        } 
+    }
+    &__ssmm {
+        display: flex;
+        gap: 25.5px;
+        a svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+            transition: fill 0.3s ease;
+        }
+        a:hover svg {
+            fill: var.$color-green;
+        }
+    }
+}

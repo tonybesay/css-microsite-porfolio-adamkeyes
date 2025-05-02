@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+
+html * {
+    font-family: var.$primary-font;
+    color: var.$color-white;
+}
+ 
+body {
+    max-width: var.$max-desktop;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: hidden;
+    font-size: 18px;
+    font-weight: 28px;
+    background-color: var.$color-black;
+    padding: 12px;
+} 
+
+h1, h2, h3, h4, h5 {
+    font-family: var.$title-font;
+}
+
+.container {
+    @include mix.breakpoint(tablet) {
+    margin: 30px 30px 0 30px;
+    }
+    @include mix.breakpoint(desktop) {
+        margin: 30px 30px 0 30px;
+        max-width: var.$max-container;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
